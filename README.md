@@ -21,7 +21,8 @@ Tested on Unity 2021.2.11f1
 - Obviously there is no support for skinned meshes
 
 ## Images
-
+![sussy trees](trees.gif)
+![sussy objects](wireframe.gif)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
