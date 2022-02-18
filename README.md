@@ -1,32 +1,27 @@
-# IMP
-a billboard imposter baker for Unity
-![png](https://www.dropbox.com/s/msxml7ymbas0pto/impQuads.PNG?raw=1)
-![gif](https://www.dropbox.com/s/l0973mqqh2qveab/mkvImposters.gif?raw=1)
-![gif](https://www.dropbox.com/s/gbqx91wwr2vzzu2/treeImposters.gif?raw=1)
+# URPIMP
+IMP ported to URP
 
-Features
---------
+Tested on Unity 2021.2.11f1
 
-- Easy single-click baking of objects to hemisphere or full sphere imposters, generates a ready to use prefab
- - batch baking support, just select multiple prefabs in scene view
+## Features
+- Better and ported baker shaders (originals were on old Unity CG)
+- Better dilate (more precise but also WAY slower to compute - O(n^2) GPU exploding shader)
+- Better padding handling
+- Support for all custom shaders (in theory)
+- No use of camera component (now uses GL and Graphics calls)
+- No longer a window tool (it's a monobehaviour now)
+- No unity billboard (was kinda useless)
+- Currently bakes: Albedo + Normal + Depth
 
-Installation & Usage
-------------
+## Notes
+- Well I pretty much have rewritten almost all of the C# side of the tool
+- Currently the system uses Unity's GBuffer shader implementation to do all the baking
+- So in theory, it should support all custom shaders created with Shader Graph, as long as those properly compile to URP's 'Deferred path'
+- Since it relies on GBuffer pass, it could easily break with future versions of URP
+- Obviously there is no support for skinned meshes
 
-- Import Plugins folder to a Unity project. 
-- Window -> IMP opens the baking tool
-- Example assets built in 2017.3, tool should be 2017 + 2018 compatible
+## Images
 
-Based on the work of [Ryan Brucks](http://shaderbits.com/blog/octahedral-impostors/)
 
-[BN11: Real-time Realistic Rendering and Lighting of Forests. Eric Bruneton, Fabrice Neyret](https://hal.inria.fr/hal-00650120/file/article.pdf) 
-
-[TSK07: Fast (Spherical) Light Field Rendering with Per-Pixel Depth. Severin Todt, Christof Rezk-Salama
-and Andreas Kolb](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.90.6202&rep=rep1&type=pdf)
-
-License
--------
-
-[CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)
-
-*Pine004 example asset is from the free Unity Book of the Dead Environment project
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
