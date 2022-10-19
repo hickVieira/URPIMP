@@ -25,4 +25,5 @@ Tested on Unity 2021.2.11f1
 ![sussy objects](wireframe.gif)
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)
+*Pine004 example asset is from the free Unity Book of the Dead Environment project
